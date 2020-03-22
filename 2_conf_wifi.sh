@@ -8,5 +8,9 @@ WLAN_DEV=`iwconfig  2>&1 | grep -v "no wirel" |  grep IEE | awk {'print $1'}`
 
 echo "Configurazione essid STAIACASA.NET su interfaccia wireless $WLAN_DEV in corso"
 
+sudo ifconfig $WLAN_DEV up
 sudo iwconfig $WLAN_DEV mode Ad-Hoc && echo "OK configurazione mode ad-hoc su $WLAN_DEV"
 sudo iwconfig $WLAN_DEV essid staiacasa.net && echo "OK configurazione essid staiacasa.net su $WLAN_DEV"
+
+sudo ifconfig $WLAN_DEV 
+sudo iwconfig $WLAN_DEV
